@@ -35,8 +35,9 @@ If you installed *Poetry* already, pass to the [Project Setting](#project-settin
 curl -sSL https://install.python-poetry.org | python3 -
 ```
 
+> As an absolute path
 ```
-echo 'export PATH="~/.local/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="/Users/usr/.local/bin:$PATH"' >> ~/.zshrc
 ```
 
 ```
@@ -56,8 +57,10 @@ mkdir $ZSH/plugins/poetry
 poetry completions zsh > $ZSH/plugins/poetry/_poetry
 ```
 You must then add poetry to your plugins array in `~/.zshrc`:
-```sh
+> without comma
+```
 plugins(
+    ...
     poetry
     ...
 )
@@ -185,6 +188,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 ```
 
+* ^, ~, etc
 * “^4.2.4” means “>=4.2.4, < 5.0.0” ([more detail about Version constraints](https://python-poetry.org/docs/dependency-specification/))
 
 ## Commands
@@ -197,6 +201,22 @@ The run command executes the given command inside the project’s virtualenv.
 ```poetry run python manage.py makemigrations```
 ```poetry run python manage.py migrate```
 ```poetry run python manage.py runserver 0.0.0.0:8000```
+
+### show
+
+To list all the available packages, you can use the show command.
+
+```
+poetry show
+```
+
+Options
+| Command    | Description                                                  |
+|:----------:|--------------------------------------------------------------|
+| `--why`    | If you do not specify a version constraint, poetry will choose a suitable one based on the available package versions. |
+| `--tree`   | List the dependencies as a tree.                             |
+| `--latest` | Show the latest version.                                     |
+| `-T`       | Only show explicitly defined packages.                       |
 
 ### add
 
@@ -241,6 +261,20 @@ Options
 | `-G dev` | Add package as development dependency.                       |
 | `--lock` | Do not perform install (only update the lockfile).           |
 
+### update
+
+In order to get the *latest versions* of the dependencies and to update the `poetry.lock` file, you should use the update command.
+
+```
+poetry update
+```
+
+If you just want to update a few packages and not all, you can list them as such:
+
+```
+poetry update django requests ipython
+```
+
 ### remove
 
 The remove command removes a package from the current list of installed packages.
@@ -256,36 +290,6 @@ This command locks (without installing) the dependencies specified in `pyprojec
 ```
 poetry lock
 ```
-
-### update
-
-In order to get the *latest versions* of the dependencies and to update the `poetry.lock` file, you should use the update command.
-
-```
-poetry update
-```
-
-If you just want to update a few packages and not all, you can list them as such:
-
-```
-poetry update django requests ipython
-```
-
-### show
-
-To list all the available packages, you can use the show command.
-
-```
-poetry show
-```
-
-Options
-| Command    | Description                                                  |
-|:----------:|--------------------------------------------------------------|
-| `--why`    | If you do not specify a version constraint, poetry will choose a suitable one based on the available package versions. |
-| `--tree`   | List the dependencies as a tree.                             |
-| `--latest` | Show the latest version.                                     |
-| `-T`       | Only show explicitly defined packages.                       |
 
 ### search
 
