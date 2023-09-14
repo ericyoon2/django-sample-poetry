@@ -4,8 +4,10 @@
 
 ![Poetry Install](https://raw.githubusercontent.com/python-poetry/poetry/master/assets/install.gif)
 
+---
+
 <details>
-<summary>Index</summary>
+<summary>INDEX</summary>
 
 - ## [Getting Started](#getting-started)
   - [Poetry Installation (globally)](#poetry-installation-globally)
@@ -13,15 +15,17 @@
 - ## [How To Use Poetry](#how-to-use-poetry-1)
   - [Commands](#commands)
     - [run](#run)
+    - [show](#show)
     - [add](#add)
+    - [update](#update)
     - [remove](#remove)
     - [lock](#lock)
-    - [update](#update)
-    - [show](#show)
     - [search](#search)
     - [check](#check)
     
 </details>
+
+---
 
 # Getting Started
 
@@ -66,40 +70,43 @@ plugins(
 )
 ```
 
-Bash:
+* Bash:
 ```
 poetry completions bash > /etc/bash_completion.d/poetry.bash-completion
 ```
 
-Bash (Homebrew):
+* Bash (Homebrew):
 ```
 poetry completions bash > $(brew --prefix)/etc/bash_completion.d/poetry.bash-completion
 ```
 
-Fish:
+* Fish:
 ```
 poetry completions fish > ~/.config/fish/completions/poetry.fish
 ```
 
-Fish (Homebrew):
+* Fish (Homebrew):
 ```
 poetry completions fish > (brew --prefix)/share/fish/vendor_completions.d/poetry.fish
 ```
 
-Zsh:
+* Zsh:
 ```
 poetry completions zsh > ~/.zfunc/_poetry
 ```
 
-Zsh (Homebrew):
+* Zsh (Homebrew):
 ```
 poetry completions zsh > $(brew --prefix)/share/zsh/site-functions/_poetry
 ```
 
-Zsh (prezto):
+* Zsh (prezto):
 ```
 poetry completions zsh > ~/.zprezto/modules/completion/external/src/_poetry
 ```
+
+---
+<br><br>
 
 ## Project Setting
 
@@ -108,11 +115,8 @@ poetry completions zsh > ~/.zprezto/modules/completion/external/src/_poetry
 
 ```
 pyenv local [PYTHON VERSION]
-```
 
-eg.
-
-```
+# e.g.
 pyenv local 3.11.3
 ```
 
@@ -120,39 +124,33 @@ pyenv local 3.11.3
 
 ```
 poetry env use [PYTHON VERSION]
-```
 
-eg.
-
-```
+# e.g.
 poetry env use 3.11.3
 ```
+```
+# If you want to get basic information about the currently activated virtual environment, you can use the env info command:
+poetry env info
 
-* If you want to get basic information about the currently activated virtual environment, you can use the env info command:
+# You can also list all the virtual environments associated with the current project with the env list command:
+poetry env list```
 
-  ```poetry env info```
-
-* You can also list all the virtual environments associated with the current project with the env list command:
-
-  ```poetry env list```
-
-* Finally, you can delete existing virtual environments by using env remove:
-
-  ```poetry env remove 3.11.3```
+# Finally, you can delete existing virtual environments by using env remove:
+poetry env remove 3.11.3
+```
 
 **3. Install packages**
 
- on local
-
 ```
+# on local
 poetry install
-```
 
-on production
-
-```
+# on production
 poetry install --without dev
 ```
+
+---
+<br><br>
 
 # How To Use Poetry
 
@@ -191,18 +189,23 @@ build-backend = "poetry.core.masonry.api"
 * ^, ~, etc
 * “^4.2.4” means “>=4.2.4, < 5.0.0” ([more detail about Version constraints](https://python-poetry.org/docs/dependency-specification/))
 
+---
+<br><br>
+
 ## Commands
 
-### run
+* ### run
 
 The run command executes the given command inside the project’s virtualenv.
-```poetry run python -V```
-```poetry run python manage.py shell```
-```poetry run python manage.py makemigrations```
-```poetry run python manage.py migrate```
-```poetry run python manage.py runserver 0.0.0.0:8000```
+```
+poetry run python -V
+poetry run python manage.py shell
+poetry run python manage.py makemigrations
+poetry run python manage.py migrate
+poetry run python manage.py runserver 0.0.0.0:8000
+```
 
-### show
+* ### show
 
 To list all the available packages, you can use the show command.
 
@@ -218,7 +221,7 @@ Options
 | `--latest` | Show the latest version.                                     |
 | `-T`       | Only show explicitly defined packages.                       |
 
-### add
+* ### add
 
 The add command adds required packages to your `pyproject.toml` and installs them.
 
@@ -261,7 +264,7 @@ Options
 | `-G dev` | Add package as development dependency.                       |
 | `--lock` | Do not perform install (only update the lockfile).           |
 
-### update
+* ### update
 
 In order to get the *latest versions* of the dependencies and to update the `poetry.lock` file, you should use the update command.
 
@@ -275,7 +278,7 @@ If you just want to update a few packages and not all, you can list them as such
 poetry update django requests ipython
 ```
 
-### remove
+* ### remove
 
 The remove command removes a package from the current list of installed packages.
 
@@ -283,7 +286,7 @@ The remove command removes a package from the current list of installed packag
 poetry remove django
 ```
 
-### lock
+* ### lock
 
 This command locks (without installing) the dependencies specified in `pyproject.toml`.
 
@@ -291,7 +294,7 @@ This command locks (without installing) the dependencies specified in `pyprojec
 poetry lock
 ```
 
-### search
+* ### search
 
 This command searches for packages on a remote index.
 
@@ -299,7 +302,7 @@ This command searches for packages on a remote index.
 poetry search requests pendulum
 ```
 
-### check
+* ### check
 
 The check command validates the content of the `pyproject.toml` file and its consistency with the `poetry.lock` file. It returns a detailed report if there are any errors.
 
