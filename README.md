@@ -33,6 +33,8 @@
 
 If you installed *Poetry* already, pass to the [Project Setting](#project-setting).
 
+<br>
+
 **1. Install - Linux, macOS, Windows (WSL)**
 
 ```
@@ -49,6 +51,8 @@ poetry --version
 ```
 
 If you see something like `Poetry (version 1.2.0)`, your install is ready to use!
+
+<br>
 
 **2. Activate tab completion**
 
@@ -110,6 +114,8 @@ poetry completions zsh > ~/.zprezto/modules/completion/external/src/_poetry
 
 ## Project Setting
 
+<br>
+
 **1. Set the Python version setting with *pyenv* in the project path**
 
 
@@ -119,6 +125,8 @@ pyenv local [PYTHON VERSION]
 # e.g.
 pyenv local 3.11.3
 ```
+
+<br>
 
 **2. Activate Poetry virtualenv**
 
@@ -138,6 +146,8 @@ poetry env list```
 # Finally, you can delete existing virtual environments by using env remove:
 poetry env remove 3.11.3
 ```
+
+<br>
 
 **3. Install packages**
 
