@@ -146,7 +146,6 @@ poetry env info
 
 # You can also list all the virtual environments associated with the current project with the env list command:
 poetry env list
-```
 
 # check Poetry settings dir
 poetry config --list
