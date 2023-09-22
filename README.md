@@ -151,10 +151,13 @@ poetry env list```
 poetry config --list
 
 # Poetry show virtual env name
-1. poetry config virtualenvs.prompt true
-2. poetry shell
-3. poetry config virtualenvs.prompt ==> true
+```
+poetry config virtualenvs.prompt true
+poetry shell
+poetry config virtualenvs.prompt 
 
+==> true
+```
 
 # Finally, you can delete existing virtual environments by using env remove:
 poetry env remove 3.11.3
