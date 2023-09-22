@@ -145,19 +145,18 @@ poetry env use 3.11.3
 poetry env info
 
 # You can also list all the virtual environments associated with the current project with the env list command:
-poetry env list```
+poetry env list
+```
 
 # check Poetry settings dir
 poetry config --list
 
 # Poetry show virtual env name
-```
+
 poetry config virtualenvs.prompt true
 poetry shell
 poetry config virtualenvs.prompt 
-
 ==> true
-```
 
 # Finally, you can delete existing virtual environments by using env remove:
 poetry env remove 3.11.3
