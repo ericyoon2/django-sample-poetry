@@ -33,12 +33,16 @@
 
 If you installed *Poetry* already, pass to the [Project Setting](#project-setting).
 
-<br>
+<br>[[[](url)](url)](url)
 
 **1. Install - Linux, macOS, Windows (WSL)**
 
 ```
 curl -sSL https://install.python-poetry.org | python3 -
+```
+
+```
+pip install poetry
 ```
 
 > As an absolute path
@@ -142,6 +146,15 @@ poetry env info
 
 # You can also list all the virtual environments associated with the current project with the env list command:
 poetry env list```
+
+# check Poetry settings dir
+poetry config --list
+
+# Poetry show virtual env name
+1. poetry config virtualenvs.prompt true
+2. poetry shell
+3. poetry config virtualenvs.prompt ==> true
+
 
 # Finally, you can delete existing virtual environments by using env remove:
 poetry env remove 3.11.3
