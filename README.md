@@ -135,9 +135,7 @@ pyenv local 3.11.3
 **2. Activate Poetry virtualenv**
 
 ```
-poetry env use [PYTHON VERSION]
-
-# e.g.
+# poetry env use [PYTHON VERSION]
 poetry env use 3.11.3
 ```
 ```
@@ -157,7 +155,12 @@ poetry shell
 poetry config virtualenvs.prompt 
 ==> true
 
-# Finally, you can delete existing virtual environments by using env remove:
+# add command to env
+emulate bash -C '[(poetry env info) path:/ + bin/activiate] '
+
+#EDIT env prompt name from poetry env info path of bin activate/ line :59 / virtual_env_prompt
+
+# you can delete existing virtual environments by using env remove:
 poetry env remove 3.11.3
 ```
 
