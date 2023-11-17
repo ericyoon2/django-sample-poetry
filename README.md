@@ -262,6 +262,9 @@ The add command adds required packages to your `pyproject.toml` and installs
 
 ```
 poetry add django ipython
+# add requiremnets local.txt
+poetry add django django-debug-toolbar django-extensions flake8 django-environ django-mathfilters python-dateutil django-middleware-global-request django-secure
+
 ```
 
 You can also specify a constraint when adding a package:
