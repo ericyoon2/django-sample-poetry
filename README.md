@@ -151,7 +151,8 @@ poetry shell
 poetry config virtualenvs.prompt 
 ==> true
 
-# add command to env
+# add command to env/ activate virtualenv
+poetry shell
 emulate bash -C '[(poetry env info) path:/ + bin/activiate] '
 
 #EDIT env prompt name from poetry env info path of bin activate/ line :59 / virtual_env_prompt
