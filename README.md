@@ -35,10 +35,10 @@ If you installed *Poetry* already, pass to the [Project Setting](#project-settin
 
 <br>[[[](url)](url)](url)
 
-**1. Install - Linux, macOS, Windows (WSL)**
+**1. Install - Linux, macOS, Windows (WSL)** / XX not brew or pip XX
 
 ```
-brew install poetry
+curl -sSL https://install.python-poetry.org | python3 -
 ```
 
 > As an absolute path
