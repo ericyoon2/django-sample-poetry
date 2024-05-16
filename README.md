@@ -344,3 +344,9 @@ The check command validates the content of the `pyproject.toml` file and its
 ```
 poetry check
 ```
+
+* ### add requirements
+
+```
+poetry export -f requirements.txt --output requirements.txt
+```
